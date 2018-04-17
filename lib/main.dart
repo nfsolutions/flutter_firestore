@@ -49,16 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
   FirebaseApp app;
   List<String> _data = new List<String>();
   final TextEditingController _msg = new TextEditingController();
-  String _sender = "Samarth";
+  String _sender = "Nydi";
 
   Future<FirebaseApp> _configure() async {
     return FirebaseApp.configure(
         name: "firebaseexample",
         options: FirebaseOptions(
-            googleAppID: "",
-            databaseURL: "",
-            apiKey: "",
-            projectID: ""));
+            googleAppID: "1:915720527781:android:098388a432cf4b3b",
+            databaseURL: "https://flutterfirestore-666.firebaseio.com",
+            apiKey: "AIzaSyC987ZJreRHfAGj1D0wuOisgYHWo2-Ek2Y",
+            projectID: "flutterfirestore-666"));
   }
 
   @override

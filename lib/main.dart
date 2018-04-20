@@ -72,13 +72,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _handleSubmitted(String text) {
     print("Submitted Detected");
+    Firestore firestore = Firestore(app: this.app);
+    // print messages
+    firestore.collection("flutter").snapshots.listen((snapshot) {
+      snapshot.documents.forEach((doc) => print(doc.data.toString()));
+    });
+    // end print messages
 
     setState(() {
       this._data.insert(0, text);
       this._msg.text = "";
     });
 
-    Firestore firestore = Firestore(app: this.app);
+
     firestore.collection("flutter").add({"message": text}).then((val) {
       val.get().then((doc) {
         AlertDialog dialog = new AlertDialog(
